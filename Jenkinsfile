@@ -10,9 +10,9 @@ node {
         stage('Deploy') {
                 sh './jenkins/scripts/deliver.sh' 
                 input message: 'Sudah selesai menggunakan React App? (Klik "Proceed" untuk mengakhiri)' 
-
+                
+                echo 'After 60 Seconds will be end'
                 sh 'sleep 60'
-                echo 'After 60 Second will be end'
                 sh './jenkins/scripts/kill.sh' 
             }
     }
